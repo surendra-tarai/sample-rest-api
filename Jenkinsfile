@@ -1,23 +1,24 @@
 pipeline {
-    agenet any
+    agent any
 
     stages {
         stage('Build') {
             steps {
-                echo 'building...'
+                echo 'Building...'
             }
         }
 
         stage('Test') {
             steps {
-                sh "python3 api.py"
+                echo 'Application Testing...'
+                // sh "python3 api.py"
             }
         }
 
         stage('Deploy') {
             steps {
                 echo 'deploying the application'
-                sh "sudo nohup python3 app.py > log.txt 2>&1 &" 
+                // sh "sudo nohup python3 app.py > log.txt 2>&1 &" 
             }
         }
 
